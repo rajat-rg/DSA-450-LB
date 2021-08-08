@@ -10,13 +10,7 @@ int kLargest(int a[], int n, int k)
     sum[1] = a[0];
     for (int i = 2; i <= n; i++)
     {
-        s = 0;
-
-        for (int j = i; j <= n; j++)
-        {
-            s += a[j];
-        }
-        sum[i] = s;
+        sum[i] = sum[i-1] + a[i-1];
     }
 
     priority_queue<int, vector<int>, greater<int>> pq;
